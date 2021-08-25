@@ -4,9 +4,9 @@
 from machine import UART, Pin
 import utime,time
 
-WiFi_SSID='Thinkgenix_JioFiber'  # Wifi_SSID
-WiFi_password = '@C3rb3rus'      # WiFi Password
-TCP_ServerIP = '192.168.29.39'   # IP of Computer on which TCP server is running
+WiFi_SSID='WiFi_SSID'  # Wifi_SSID
+WiFi_password = 'WiFi_Password'      # WiFi Password
+TCP_ServerIP = '192.168.1.22'   # IP of Computer on which TCP server is running
 Port = '8080'                    # TCP Server Port
 
 uart = UART(0, 115200)           # Default Baud rate
