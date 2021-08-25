@@ -1,5 +1,6 @@
 # Use thonny ide to program pico
 # Use Hercules SETUP utility for TCP server and client https://www.hw-group.com/software/hercules-setup-utility
+# Make sure both server and WiFi HAT are connected on same network
 
 from machine import UART, Pin
 import utime,time
