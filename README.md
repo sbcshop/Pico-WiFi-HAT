@@ -5,3 +5,5 @@ Pico WiFi HAT is a compact and easy-to-use WiFi HAT for the Raspberry Pi Pico th
 ## For Installation Guide, Please Visit 
 
 ### <a href="https://learn.sb-components.co.uk/Pico-wifi-HAT" > Pico WiFi Wiki Portal </a>
+
+<img src="https://cdn.shopify.com/s/files/1/1217/2104/products/PicoWiFiHAt_900x.png" height="600" width="600" >
