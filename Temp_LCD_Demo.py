@@ -46,4 +46,5 @@ while True:
     temperature = 27 - (reading - 0.706)/0.001721
     
     tft.text(font, "TEMP:{:.2f}".format(temperature), 40,40)
+    print("TEMP:{:.2f}".format(temperature))
     utime.sleep(1)
