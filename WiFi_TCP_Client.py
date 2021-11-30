@@ -13,9 +13,9 @@ import vga1_16x16 as font2
 
 lst = []
 #import vga1_8x16 as font
-WiFi_SSID='Tech SB_2G'  # Wifi_SSID
-WiFi_password = 'jc643111'      # WiFi Password
-TCP_ServerIP = '192.168.29.195'   # IP of Computer on which TCP server is running
+WiFi_SSID='SSID'  # Wifi_SSID
+WiFi_password = 'PASSWORD'      # WiFi Password
+TCP_ServerIP = 'IP ADDRESS OF YOUR PC'   # IP of Computer on which TCP server is running
 Port = '8080'                    # TCP Server Port
 
 uart = UART(0, 115200)           # Default Baud rate
