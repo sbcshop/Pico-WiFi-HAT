@@ -13,9 +13,9 @@ import vga1_16x16 as font2
 
 lst = []
 #import vga1_8x16 as font
-WiFi_SSID='SSID'  # Wifi_SSID
-WiFi_password = 'PASSWORD'      # WiFi Password
-TCP_ServerIP = 'IP ADDRESS OF YOUR PC'   # IP of Computer on which TCP server is running
+WiFi_SSID='Wifi_SSID'  # Wifi_SSID
+WiFi_password = 'Password'      # WiFi Password
+TCP_ServerIP = ' IP_Of_Server'   # IP of Computer on which TCP server is running or any server
 Port = '8080'                    # TCP Server Port
 
 uart = UART(0, 115200)           # Default Baud rate
@@ -43,7 +43,7 @@ info()
 
 
 ######## Function to send or receive commands and data
-
+lst = []
 def sendCMD(cmd,ack,timeout=2000):
     uart.write(cmd+'\r\n')
     t = utime.ticks_ms()
@@ -51,9 +51,9 @@ def sendCMD(cmd,ack,timeout=2000):
         s=uart.read()
         if(s != None):
             s=s.decode()
-            lst.append(s)
+            if cmd == "AT+CIFSR":
+                 lst.append(s)
             print(s)
-            
             if(s.find(ack) >= 0):
                 return True
     return False
@@ -72,15 +72,16 @@ sendCMD("AT+CIPSEND",">")
 tft.text(font,"WAITING........", 15,55,st7789.BLACK)
 uart.write('Hello World !!!\r\n')  # Send data to TCP server
 uart.write('ESP8266 TCP Client\r\n')
-a = lst[4]
-res = str(a)[1:-1]
+res = str(lst)[1:-1]
 x = res.split(",")
-s = x[3].replace('"',"")
-print(s)
+x = x[3].replace('"',"")
+x = x.split("+")
+r = x[0][:-4]
+print(r)
 tft.text(font2,"IP ADDRESS", 5,10)
 tft.text(font2,"RECEIVER MODE:", 10,60)
 
-tft.text(font2,s, 5,30)
+tft.text(font2,r, 5,30)
 tft.fill_rect(10, 50, 220,5, st7789.BLUE)
 
 while True:
@@ -91,4 +92,5 @@ while True:
         time.sleep(2)
         tft.text(font1,"                            ", 10,80)
         print(s)    # Print received data
+
 
