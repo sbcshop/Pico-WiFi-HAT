@@ -1,5 +1,5 @@
 # Use thonny ide to program pico
-# Use Hercules SETUP utility for TCP server and client https://www.hw-group.com/software/hercules-setup-utility
+# Use Hercules SETUP utility for TCP server and client https://www.hw-group.com/software/hercules-setup-utility or you can use any server
 # Make sure both server and WiFi HAT are connected on same network
 
 from machine import UART, Pin,SPI
@@ -78,7 +78,7 @@ x = x[3].replace('"',"")
 x = x.split("+")
 r = x[0][:-4]
 print(r)
-tft.text(font2,"IP ADDRESS", 5,10)
+tft.text(font2,"IP ADDRESS", 5,10)# device ip address
 tft.text(font2,"RECEIVER MODE:", 10,60)
 
 tft.text(font2,r, 5,30)
