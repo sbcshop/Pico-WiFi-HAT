@@ -1,3 +1,4 @@
+# This code display the internal  temperature of raspberry pi PICO  on lcd screen
 import random
 from machine import Pin, SPI, ADC
 import st7789
